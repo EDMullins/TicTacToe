@@ -11,16 +11,24 @@ header {
     display: flex;
     justify-content: center;
 }
-.title {
+h1 {
     color: var(--secondary-color);
     display: flex;
     text-align: center;
 }
 h2 {
     color: var(--secondary-color);
+    font-size: 4vw;
+}
+p {
+    font-size: 3vw;
+}
+.title {
+    margin: 0;
+    font-size: 7vw;
 }
 section {
-    margin-top: 10vh;
+    margin-top: 5vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -63,13 +71,13 @@ tr:not(:first-child):not(:last-child) {
 }
 .button {
     padding: 0;
-    width: 10vw;
-    height: 10vw;
+    width: 12vw;
+    height: 12vw;
     background-color: var(--primary-color);
     border: none;
     cursor: pointer;
     color: var(--secondary-color);
-    font-size: 4vw;
+    font-size: 6vw;
 }
 .endScreen {
     background-color: var(--menu-color);
@@ -91,6 +99,30 @@ tr:not(:first-child):not(:last-child) {
     align-items: center;
     flex-direction: column;
 }
+.endScreen p {
+    margin: 0;
+}
 .endButtons {
     padding: 2vw;
+}
+
+.endButtons button {
+    color: white;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    padding: 1.5vw;
+    cursor: pointer;
+}
+
+.endButtons button:hover {
+    background-color: rgb(5, 67, 5);
+}
+
+@media screen and (max-width: 500px) {
+    section {
+        flex-direction: column-reverse;
+    }
+    .turnBox {
+        margin-top: 10%;
+    }
 }

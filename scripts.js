@@ -35,6 +35,7 @@ function addPick(butId) {
 }
 
 function checkWinner() {
+    let count = 0;
     //analyze rows for winner
     for (let i = 0; i < 9; i+=3) {
         if (board[i] == board[i+1] && board[i+1] == board[i+2] && board[i] != 0) {
@@ -56,6 +57,15 @@ function checkWinner() {
         return board[2];
     }
     //if no winner found
+    for (let i = 0; i < 9; ++i) {
+        if (board[i] != 0) {
+            count++;
+        }
+    }
+    if (count == 9) {
+        //3 for tie
+        return 3;
+    }
     return 0;
 }
 
@@ -80,9 +90,13 @@ function boardClick(butId) {
     showTurn();
     //checking for winner
     let winner = checkWinner();
-    if (winner != 0) {
-        console.log(winner);
+    if (winner != 0 && winner < 3) {
         document.getElementById("winnerMessage").innerHTML = "Player " + winner + " wins!";
+
+        document.getElementById("endScreen").style.visibility = "visible";
+    }
+    else if (winner == 3) {
+        document.getElementById("winnerMessage").innerHTML = "Tie";
 
         document.getElementById("endScreen").style.visibility = "visible";
     }
