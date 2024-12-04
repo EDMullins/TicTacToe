@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC TAC TOE</title>
+</head>
+<body id="body">
+    <header>
+        <h1 class="title">Tic Tac Toe</h1>
+    </header>
+    <section>
+        <div class="turnBox">
+            <h2>Turn:</h2>
+            <p id="turnNum">Player 1</p>
+        </div>
+        <table class="buttons">
+            <tr>
+                <td>
+                    <button type="button" class="button"  id="0" onclick="boardClick(0)"></button>
+                </td>
+                <td>
+                    <button type="button" class="button" id="1" onclick="boardClick(1)"></button>
+                </td>
+                <td>
+                    <button type="button" class="button" id="2" onclick="boardClick(2)"></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" class="button" id="3" onclick="boardClick(3)"></button>
+                </td>
+                <td>
+                    <button type="button" class="button" id="4" onclick="boardClick(4)"></button>
+                </td>
+                <td>
+                    <button type="button" class="button" id="5" onclick="boardClick(5)"></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" class="button" id="6" onclick="boardClick(6)"></button>
+                </td>
+                <td>
+                    <button type="button" class="button" id="7" onclick="boardClick(7)"></button>
+                </td>
+                <td>
+                    <button type="button" class="button" id="8" onclick="boardClick(8)"></button>
+                </td>
+            </tr>
+        </table>
+        <div>
+        </div>
+    </section>
+    <div class="endScreen" id="endScreen">
+        <h1>Game Over</h1>
+        <div id="winnerMessage">winner</div>
+        <div class="endButtons">
+            <button class="restart" id="restart" onClick="restart()">Restart</button>
+            <button class="quit" id="quit" onclick="closeProgram()">Quit</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

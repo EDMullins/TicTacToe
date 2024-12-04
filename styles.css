@@ -1,0 +1,96 @@
+:root {
+    --primary-color: rgb(246, 236, 223); /* Light primary by default */
+    --menu-color: rgb(250, 235, 215);
+    --secondary-color: rgb(8, 110, 8);
+    --theme-color: rgb(69, 69, 69);
+}
+body {
+    background-color: var(--primary-color);
+}
+header {
+    display: flex;
+    justify-content: center;
+}
+.title {
+    color: var(--secondary-color);
+    display: flex;
+    text-align: center;
+}
+h2 {
+    color: var(--secondary-color);
+}
+section {
+    margin-top: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+section div {
+    width: 25%;
+}
+.turnBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.turnBox h2{
+    margin: 0;
+}
+
+.turnBox p {
+    margin-bottom: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+td {
+    padding: 0;
+    margin: 0;
+}
+td:not(:first-child):not(:last-child) {
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+}
+tr:not(:first-child):not(:last-child) {
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+.button {
+    padding: 0;
+    width: 10vw;
+    height: 10vw;
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    color: var(--secondary-color);
+    font-size: 4vw;
+}
+.endScreen {
+    background-color: var(--menu-color);
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-0%, -50%);
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.endButtons {
+    padding: 2vw;
+}
