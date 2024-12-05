@@ -1,4 +1,14 @@
 let turn = 0;
+//uses localStorage to store the number of wins on reload
+if (localStorage.getItem('oneWins') === null) {
+    localStorage.setItem('oneWins', 0);
+}
+if (localStorage.getItem('twoWins') === null) {
+    localStorage.setItem('twoWins', 0);
+}
+let oneWins = localStorage.getItem('oneWins');
+let twoWins = localStorage.getItem('twoWins');
+
 const board = [
     0,0,0,
     0,0,0,
@@ -74,7 +84,13 @@ function restart() {
 }
 
 function closeProgram() {
+    localStorage.clear();
     window.close();
+}
+
+function showStats() {
+    document.getElementById("oneWins").innerHTML = localStorage.getItem('oneWins');
+    document.getElementById("twoWins").innerHTML = localStorage.getItem('twoWins');
 }
 
 function boardClick(butId) {
@@ -91,13 +107,23 @@ function boardClick(butId) {
     //checking for winner
     let winner = checkWinner();
     if (winner != 0 && winner < 3) {
-        document.getElementById("winnerMessage").innerHTML = "Player " + winner + " wins!";
-
+        document.getElementById("winnerMessage").innerHTML = "Player " + winner + " Wins";
         document.getElementById("endScreen").style.visibility = "visible";
+        if (winner == 1) {
+            ++oneWins;
+            localStorage.setItem('oneWins', oneWins);
+            showStats();
+        }
+        else {
+            ++twoWins;
+            localStorage.setItem('twoWins', twoWins);
+            showStats();
+        }
     }
     else if (winner == 3) {
         document.getElementById("winnerMessage").innerHTML = "Tie";
-
         document.getElementById("endScreen").style.visibility = "visible";
+
+        showStats();
     }
 }

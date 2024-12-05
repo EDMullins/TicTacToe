@@ -56,7 +56,17 @@
     </section>
     <div class="endScreen" id="endScreen">
         <h1>Game Over</h1>
-        <p id="winnerMessage">winner</p>
+        <div class="stats">
+            <div class="winStat">
+                <div>Player 1 Wins</div>
+                <div class="stat" id="oneWins">0</div>
+            </div>
+            <p id="winnerMessage">Player 1 Wins</p>
+            <div class="winStat">
+                <div>Player 2 Wins</div>
+                <div class="stat" id="twoWins">0</div>
+            </div>
+        </div>
         <div class="endButtons">
             <button class="restart" id="restart" onClick="restart()">Restart</button>
             <button class="quit" id="quit" onclick="closeProgram()">Quit</button>
