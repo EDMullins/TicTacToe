@@ -6,6 +6,7 @@ if (localStorage.getItem('oneWins') === null) {
 if (localStorage.getItem('twoWins') === null) {
     localStorage.setItem('twoWins', 0);
 }
+
 let oneWins = localStorage.getItem('oneWins');
 let twoWins = localStorage.getItem('twoWins');
 
@@ -14,6 +15,43 @@ const board = [
     0,0,0,
     0,0,0
 ];
+
+function changeTheme() {
+    let lightPrimary = 'rgb(246, 236, 223)';
+    let lightMenu = 'rgb(250, 235, 215)';
+    let lightSecondary = 'rgb(8, 110, 8)';
+    let lightTheme = 'rgb(30, 30, 30)';
+    let lightBoard = 'rgb(30, 30, 30)'
+    let lightHover = 'rgb(5, 67, 5)';
+
+    let darkPrimary = 'rgb(30, 30, 30)';
+    let darkMenu = 'rgb(69, 69, 69)';
+    let darkSecondary = '#d3d3ff'
+    let darkTheme = 'rgb(246, 236, 223)';
+    let darkBoard = '#d3d3ff';
+    let darkHover = 'rgb(117, 78, 215)';
+
+    const root = document.documentElement;
+    //light to dark
+    if (getComputedStyle(root).getPropertyValue('--primary-color') == 'rgb(246, 236, 223)') {
+        root.style.setProperty('--primary-color', darkPrimary);
+        root.style.setProperty('--menu-color', darkMenu);
+        root.style.setProperty('--secondary-color', darkSecondary);
+        root.style.setProperty('--theme-color', darkTheme);
+        root.style.setProperty('--board-color', darkBoard);
+        root.style.setProperty('--menu-hover-color', darkHover);
+        document.getElementById('themeText').innerHTML = "Light";
+    }
+    //dark to light
+    else {
+        root.style.setProperty('--primary-color', lightPrimary);
+        root.style.setProperty('--menu-color', lightMenu);
+        root.style.setProperty('--secondary-color', lightSecondary);
+        root.style.setProperty('--theme-color', lightTheme);
+        root.style.setProperty('--board-color', lightBoard);
+        document.getElementById('themeText').innerHTML = "Dark";
+    }
+}
 
 function turnChar(turn) {
     //based on turn choose with char to display

@@ -2,7 +2,9 @@
     --primary-color: rgb(246, 236, 223); /* Light primary by default */
     --menu-color: rgb(250, 235, 215);
     --secondary-color: rgb(8, 110, 8);
-    --theme-color: rgb(69, 69, 69);
+    --theme-color: rgb(30, 30, 30);
+    --board-color: rgb(30, 30, 30);
+    --menu-hover-color: rgb(5, 67, 5);
 }
 body {
     background-color: var(--primary-color);
@@ -48,22 +50,20 @@ section div {
 
 .turnBox p {
     margin-bottom: 20px;
+    color: var(--board-color);
 }
 
 table {
     border-collapse: collapse;
 }
-td {
-    padding: 0;
-    margin: 0;
-}
+ 
 td:not(:first-child):not(:last-child) {
-    border-left: 5px solid black;
-    border-right: 5px solid black;
+    border-left: 5px solid var(--board-color);
+    border-right: 5px solid var(--board-color);
 }
 tr:not(:first-child):not(:last-child) {
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
+    border-top: 5px solid var(--board-color);
+    border-bottom: 5px solid var(--board-color);
 }
 .buttons {
     display: flex;
@@ -103,6 +103,7 @@ tr:not(:first-child):not(:last-child) {
 .stats {
     display: flex;
     flex-direction: row;
+    color: var(--board-color);
 }
 
 .winStat {
@@ -134,7 +135,33 @@ tr:not(:first-child):not(:last-child) {
 }
 
 .endButtons button:hover {
-    background-color: rgb(5, 67, 5);
+    background-color: var(--menu-hover-color);
+}
+
+.themeButton {
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    width: 3.5vw;
+    height: 3.5vw;
+    border-radius: 50%;
+    background-color: var(--theme-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.themeButton:hover {
+    transform: scale(1.1);
+    transition-duration: .5s;
+    box-shadow:5px 5px rgb(99, 99, 99);
+}
+
+.themeButton p {
+    font-size: 1.5vw;
 }
 
 @media screen and (max-width: 500px) {

@@ -17,36 +17,36 @@
             <p id="turnNum">Player 1</p>
         </div>
         <table class="buttons">
-            <tr>
-                <td>
+            <tr id="tr">
+                <td id="td">
                     <button type="button" class="button"  id="0" onclick="boardClick(0)"></button>
                 </td>
-                <td>
+                <td id="td">
                     <button type="button" class="button" id="1" onclick="boardClick(1)"></button>
                 </td>
-                <td>
+                <td id="td">
                     <button type="button" class="button" id="2" onclick="boardClick(2)"></button>
                 </td>
             </tr>
-            <tr>
-                <td>
+            <tr id="tr">
+                <td id="td">
                     <button type="button" class="button" id="3" onclick="boardClick(3)"></button>
                 </td>
-                <td>
+                <td id="td">
                     <button type="button" class="button" id="4" onclick="boardClick(4)"></button>
                 </td>
-                <td>
+                <td id="td">
                     <button type="button" class="button" id="5" onclick="boardClick(5)"></button>
                 </td>
             </tr>
-            <tr>
-                <td>
+            <tr id="tr">
+                <td id="td">
                     <button type="button" class="button" id="6" onclick="boardClick(6)"></button>
                 </td>
-                <td>
+                <td id="td">
                     <button type="button" class="button" id="7" onclick="boardClick(7)"></button>
                 </td>
-                <td>
+                <td id="td">
                     <button type="button" class="button" id="8" onclick="boardClick(8)"></button>
                 </td>
             </tr>
@@ -71,6 +71,9 @@
             <button class="restart" id="restart" onClick="restart()">Restart</button>
             <button class="quit" id="quit" onclick="closeProgram()">Quit</button>
         </div>
+    </div>
+    <div class="themeButton" onclick="changeTheme()">
+        <p id="themeText">Dark</p>
     </div>
 </body>
 </html>
